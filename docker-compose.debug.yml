@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  envvariabletest:
+    image: envvariabletest
+    build:
+      context: .
+      dockerfile: src/EnvVariableTest/Dockerfile
+    volumes:
+      - ~/.vsdbg:/remote_debugger:rw
