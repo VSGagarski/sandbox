@@ -1,0 +1,7 @@
+#!csharp
+
+string productID = "140c";
+int pid = Convert.ToInt32(productID, 16);
+// or if you don't like "base 16" and want to have self-documenting code:
+pid = Int32.Parse(productID, System.Globalization.NumberStyles.HexNumber);
+Console.WriteLine(pid);

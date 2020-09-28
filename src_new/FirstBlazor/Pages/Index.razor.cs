@@ -43,7 +43,6 @@ namespace FirstBlazor.Pages
 
         private Task HandleTextMessage(EventMessage obj)
         {
-            InvokeAsync(() => { EventMessega = obj.Text; StateHasChanged(); });
             return Task.CompletedTask;
         }
         private async Task HandleClick()

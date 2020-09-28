@@ -25,7 +25,7 @@ namespace SecondMicroservice
                 System.Console.WriteLine("Publish start");
                             await bus.Publish(new EventMessage
                                         {
-                                            Text = "Event Message!"
+                                            Text = "Event Message!" + request.MessageSecondRequest
                                         },Exchange.WithMultipleSubscribing);
                 System.Console.WriteLine("Publish end");
                 return new SecondResponse{ MessageSecondResponse  = request.MessageSecondRequest + " Add response"};

@@ -6,11 +6,16 @@ namespace Consumer
 {
     class Program
     {
-       static void Main(string[] args)
+        static void Main(string[] args)
         {
             using (var bus = RabbitHutch.CreateBus("host=localhost"))
             {
-                bus.PubSub.Subscribe<EventMessage>($"{args[0]}", HandleTextMessage);
+                bus.Respond<Request, Response>(req =>
+                {
+                    System.Console.WriteLine(req.Text);
+                    return new Response(){Text=req+" Response" +DateTime.Now.ToString()};
+
+                });
 
                 Console.WriteLine("Listening for messages. Hit <return> to quit.");
                 Console.ReadLine();

@@ -1,9 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
-    <ProjectReference Include="..\Message\Message.csproj"/>
+    <ProjectReference Include="..\Message\Message.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="EasyNetQ" Version="5.3.0-alpha0079"/>
+   
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="EasyNetQ" Version="5.2.0" />
   </ItemGroup>
   <PropertyGroup>
     <OutputType>Exe</OutputType>
